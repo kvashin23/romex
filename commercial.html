@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="assets/styles.css">
 
 </head>
-<body>
+<body class="transparent-header">
 
 <header>
   <div class="topbar">
@@ -58,18 +58,47 @@
   </div>
 </section>
 
+<section style="padding:34px 0 0;">
+  <div class="wrap">
+    <div class="kpi-row" style="margin:0;">
+      <div class="kpi"><b>Комфорт</b><span>класс объекта</span></div>
+      <div class="kpi"><b>8</b><span>этажность</span></div>
+      <div class="kpi"><b>62</b><span>помещений в продаже</span></div>
+      <div class="kpi"><b>10–543 м²</b><span>площадь помещений</span></div>
+      <div class="kpi"><b>4 кв. 2026</b><span>срок сдачи</span></div>
+    </div>
+  </div>
+</section>
+
 <section class="search-section">
   <div class="wrap">
     <div class="search-card">
       <div class="bp-overlay blueprint"></div>
       <div class="search-top">
-        <div><h2>Поиск помещения</h2><p>Фильтр можно скрыть в админ-панели, если коммерция распродана.</p></div>
+        <div><h2>Выбрать помещение</h2><p>Фильтр можно скрыть в админ-панели, если коммерция распродана.</p></div>
       </div>
-      <div class="filters-grid" style="grid-template-columns:1fr 1fr 1fr auto;">
-        <div class="filter"><label>Площадь, м²</label><select><option>любая</option><option>20–40</option><option>40–80</option><option>80+</option></select></div>
-        <div class="filter"><label>Этаж</label><select><option>1 этаж</option><option>цоколь</option></select></div>
-        <div class="filter readonly"><label>Стоимость, ₽</label><input type="text" value="от 3 200 000" readonly></div>
-        <button class="search-submit">Показать →</button>
+      <div class="filters-grid" style="grid-template-columns:1fr 1.3fr 1.3fr 1fr auto;">
+        <div class="filter"><label>Литер</label><select><option>Любой</option><option>Литер 1</option><option>Литер 2</option><option>Литер 3</option></select></div>
+        <div class="filter">
+          <label>Стоимость, млн ₽</label>
+          <div class="range-pair" data-output="commPriceOut">
+            <div class="range-track-bg"></div>
+            <input type="range" class="range-min" min="3" max="20" step="0.1" value="3.2">
+            <input type="range" class="range-max" min="3" max="20" step="0.1" value="20">
+          </div>
+          <div class="range-values" id="commPriceOut">3,2 – 20 млн ₽</div>
+        </div>
+        <div class="filter">
+          <label>Площадь, м²</label>
+          <div class="range-pair" data-output="commAreaOut">
+            <div class="range-track-bg"></div>
+            <input type="range" class="range-min" min="10" max="543" step="1" value="10">
+            <input type="range" class="range-max" min="10" max="543" step="1" value="543">
+          </div>
+          <div class="range-values" id="commAreaOut">10 – 543 м²</div>
+        </div>
+        <div class="filter"><label>Срок сдачи</label><select><option>Любой</option><option>3 кв. 2026</option><option>4 кв. 2026</option><option>2027</option></select></div>
+        <button class="search-submit">Показать 62 →</button>
       </div>
     </div>
   </div>
@@ -79,15 +108,15 @@
   <div class="wrap">
     <div class="section-head"><div><span class="kicker">Свободные лоты</span><h2>Помещения</h2></div></div>
     <div class="card-grid-3">
-      <div class="flat-card"><div class="render"><span class="tag">пом. 1</span></div>
-        <div class="flat-body"><div class="flat-title">Помещение 32 м²</div><div class="flat-meta">Литер 1 · 1 этаж, витрина на улицу</div>
+      <div class="flat-card"><div class="render"><span class="lot-number">№A.12</span><span class="tag">пом. 1</span></div>
+        <div class="flat-body"><div class="flat-title">Помещение 32 м²</div><div class="flat-meta">Литер 1 · 1 этаж, витрина на улицу <span class="deadline">Сдача 4 кв. 2026</span></div>
         <div class="row"><span class="flat-price">3 200 000 ₽</span></div><button class="btn btn-primary">Оставить заявку</button></div></div>
-      <div class="flat-card"><div class="render tone-b"><span class="tag">пом. 2</span></div>
-        <div class="flat-body"><div class="flat-title">Помещение 54 м²</div><div class="flat-meta">Литер 2 · 1 этаж, угловое</div>
+      <div class="flat-card"><div class="render tone-b"><span class="lot-number">№B.05</span><span class="tag">пом. 2</span></div>
+        <div class="flat-body"><div class="flat-title">Помещение 54 м²</div><div class="flat-meta">Литер 2 · 1 этаж, угловое <span class="deadline">Сдача 2027</span></div>
         <div class="row"><span class="flat-price">5 100 000 ₽</span></div><button class="btn btn-primary">Оставить заявку</button></div></div>
-      <div class="flat-card"><div class="render tone-c"><span class="tag">пом. 3</span></div>
-        <div class="flat-body"><div class="flat-title">Помещение 88 м²</div><div class="flat-meta">Литер 3 · 1 этаж, два входа</div>
-        <div class="row"><span class="flat-price">7 800 000 ₽</span></div><button class="btn btn-primary">Оставить заявку</button></div></div>
+      <div class="flat-card"><div class="render tone-c"><span class="lot-number">№C.09</span><span class="tag">пом. 3</span></div>
+        <div class="flat-body"><div class="flat-title">Помещение 88 м²</div><div class="flat-meta">Литер 3 · 1 этаж, два входа <span class="deadline">Сдача 2027</span></div>
+        <div class="row"><span class="price-old">8 600 000 ₽</span><span class="flat-price">7 800 000 ₽</span><span class="discount-badge">−9%</span></div><button class="btn btn-primary">Оставить заявку</button></div></div>
     </div>
   </div>
 </section>
@@ -109,7 +138,7 @@
   <div class="wrap">
     <div class="footer-top">
       <div>
-        <div class="footer-logo">РОМЕКС</div>
+        <div class="footer-logo">Ромекс Девелопмент</div>
         <p style="max-width:220px; line-height:1.6; color:rgba(243,238,230,0.5);">Один из крупнейших девелоперов Юга России.</p>
       </div>
       <div>
@@ -124,6 +153,7 @@
         <a href="buying.html">Способы покупки</a>
         <a href="mortgage.html">Ипотека</a>
         <a href="keys.html">Выдача ключей</a>
+        <a href="contacts.html">Клиентский сервис</a>
       </div>
       <div>
         <h5>Компания</h5>
@@ -145,7 +175,7 @@
       <div style="display:flex; gap:18px;">
         <a href="#">Политика конфиденциальности</a>
         <a href="#">Дисклеймеры</a>
-        <a href="#">VK · TG · WhatsApp</a>
+        <a href="#">VK · TG · WhatsApp · MAX</a>
       </div>
     </div>
     <p class="legal-note">Сайт носит исключительно информационный характер и не является публичной офертой (ст. 437 п.2 ГК РФ). Продолжая пользоваться сайтом, вы соглашаетесь на обработку файлов cookie в соответствии с Политикой конфиденциальности.</p>
