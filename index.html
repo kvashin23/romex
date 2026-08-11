@@ -29,7 +29,6 @@
     </nav>
     <div class="header-actions">
       <span class="phone mono">8 800 200 96 50</span>
-      <button class="btn btn-outline">Обратный звонок</button>
       <button class="btn btn-primary">Подобрать квартиру</button>
       <button class="burger"><span></span><span></span><span></span></button>
     </div>
@@ -38,7 +37,7 @@
     <a href="promotions.html">Акции</a>
     <a href="buying.html">Способы покупки</a>
     <a href="about.html">О компании</a>
-    <a href="investors.html">Инвесторам</a>
+    <a href="partners.html">Партнёрам</a>
     <a href="keys.html">Выдача ключей</a>
     <a href="contacts.html">Контакты</a>
   </div>
@@ -87,6 +86,7 @@
         <h2>Акции и предложения</h2>
       </div>
       <div class="arrow-btns">
+        <button class="btn btn-primary" style="border-radius:100px; width:auto; height:auto; padding:11px 20px;" data-modal-open="subscribeModal">Подписаться на рассылку</button>
         <button data-scroll-prev="promoTrack">‹</button>
         <button data-scroll-next="promoTrack">›</button>
       </div>
@@ -133,9 +133,9 @@
           <select><option>Краснодар</option><option>Новороссийск</option><option>Анапа</option></select>
         </div>
         <div class="filter">
-          <label>Комнатность</label>
+          <label>Сколько комнат</label>
           <div class="room-toggle">
-            <button class="active">Студия</button><button>1к</button><button>2к</button><button>3к+</button>
+            <button>Все</button><button class="active">Студия</button><button>1к</button><button>2к</button><button>3к+</button>
           </div>
         </div>
         <div class="filter readonly">
@@ -291,8 +291,7 @@
       <div>
         <h5>Компания</h5>
         <a href="about.html">О компании</a>
-        <a href="investors.html">Инвесторам</a>
-        <a href="partners.html">Партнёрам и агентам</a>
+        <a href="partners.html">Партнёрам</a>
         <a href="news.html">Пресс‑центр</a>
       </div>
       <div>
@@ -318,6 +317,21 @@
 <div class="cookie-banner" id="cookieBanner">
   <p>Мы используем файлы cookie, чтобы сайт работал быстрее и удобнее для вас.</p>
   <button onclick="dismissCookie()">Понятно</button>
+</div>
+
+<div class="modal-overlay" id="subscribeModal">
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close>✕</button>
+    <h3>Оставьте заявку</h3>
+    <p class="form-note">Мы свяжемся с Вами и направим подборку лучших предложений</p>
+    <form data-form>
+      <div class="field"><label>Имя</label><input type="text" placeholder="Как к вам обращаться"></div>
+      <div class="field"><label>Номер телефона</label><input type="tel" placeholder="+7 900 000 00 00"></div>
+      <label class="consent"><input type="checkbox"> Даю согласие на обработку персональных данных</label>
+      <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+    <div class="form-success"><div class="ic">✓</div><h3>Заявка отправлена</h3><p style="color:var(--slate); font-size:13.5px;">Мы свяжемся с вами в ближайшее время.</p></div>
+  </div>
 </div>
 
 <script src="assets/main.js"></script>

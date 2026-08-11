@@ -76,6 +76,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- модальные окна ---------- */
+  document.querySelectorAll('[data-modal-open]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modal = document.getElementById(btn.dataset.modalOpen);
+      if (modal) modal.classList.add('open');
+    });
+  });
+  document.querySelectorAll('[data-modal-close]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.modal-overlay')?.classList.remove('open');
+    });
+  });
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) overlay.classList.remove('open');
+    });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+  });
+
   /* ---------- двойной слайдер диапазона (стоимость/площадь) ---------- */
   document.querySelectorAll('.range-pair').forEach(pair => {
     const minInput = pair.querySelector('.range-min');
